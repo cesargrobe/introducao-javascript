@@ -1,6 +1,6 @@
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 
-botaoAdicionar.addEventListener("click", function(){
+botaoAdicionar.addEventListener("click", function(event){
     event.preventDefault();
     var form = document.querySelector("#form-adiciona");
     //Extrai informações do paciente do form
@@ -29,29 +29,6 @@ function obtemPacienteDoFormulario(form){
     return paciente;
 }
 
-function montaTr(paciente){
-
-    var pacienteTr = document.createElement("tr");
-
-    var nomeTd = document.createElement("td");
-    var pesoTd = document.createElement("td");
-    var alturaTd = document.createElement("td");
-    var gorduraTd = document.createElement("td");
-    var imcTd = document.createElement("td");
-
-    nomeTd.textContent = paciente.nome;
-    pesoTd.textContent = paciente.peso;
-    alturaTd.textContent = paciente.altura;
-    gorduraTd.textContent = paciente.gordura;
-    imcTd.testContent = paciente.imc;
-
-    pacienteTr.appendChild(nomeTd);
-    pacienteTr.appendChild(pesoTd);
-    pacienteTr.appendChild(alturaTd);
-    pacienteTr.appendChild(gorduraTd);
-    pacienteTr.appendChild(imcTd);
-}
-
 function montaTr(paciente) {
     var pacienteTr = document.createElement("tr");
     pacienteTr.classList.add("paciente");
@@ -64,4 +41,12 @@ function montaTr(paciente) {
 
     return pacienteTr;
 
+}
+
+function montaTd(dado, classe) {
+    var td = document.createElement("td");
+    td.classList.add(classe);
+    td.textContent = dado;
+
+    return td;
 }
