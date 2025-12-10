@@ -11,8 +11,8 @@ botaoAdicionar.addEventListener("click", function(event){
 
     var tabela = document.querySelector("#tabela-pacientes");
 
-    //tabela.appendChild(pacienteTr);
-    adicionaPacienteNaTabela(paciente);
+    tabela.appendChild(pacienteTr);
+    
 
 
     form.reset();
@@ -45,8 +45,10 @@ function montaTr(paciente) {
 
 }
 
-function adicionaPacienteNaTabela(paciente) {
-    var pacienteTr = montaTr(paciente);
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTr);
+function montaTd(dado, classe) {
+    var td = document.createElement("td");
+    td.classList.add(classe);
+    td.textContent = dado;
+
+    return td;
 }
