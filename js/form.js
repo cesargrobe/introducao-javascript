@@ -52,7 +52,7 @@ function montaTr(paciente){
     pacienteTr.appendChild(imcTd);
 }
 
-function montaTd(paciente) {
+function montaTr(paciente) {
     var pacienteTr = document.createElement("tr");
     pacienteTr.classList.add("paciente");
 
